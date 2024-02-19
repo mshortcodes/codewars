@@ -14,9 +14,9 @@ function solution(nums) {
 	}
 
 	for (let i = 0; i < nums.length; i++) {
-		for (let j = i + 1; j < nums.length; j++) {
-			if (nums[j] < nums[i]) {
-				[nums[i], nums[j]] = [nums[j], nums[i]];
+		for (let j = 0; j < nums.length - 1; j++) {
+			if (nums[j] > nums[j + 1]) {
+				[nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
 			}
 		}
 	}
@@ -24,4 +24,4 @@ function solution(nums) {
 	return nums;
 }
 
-console.log(solution([1, 2, 3, 10, 5]));
+console.log(solution([1, 2, 10, 50, 5]));
